@@ -1,0 +1,37 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.1'
+	id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '21'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.2.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.2.1'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server:3.2.1'
+	implementation 'org.springframework.boot:spring-boot-starter-security:3.2.1'
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
+	implementation 'com.google.guava:guava:32.1.2-jre'
+	implementation group: 'cn.hutool', name: 'hutool-all', version: '5.8.26'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.3'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

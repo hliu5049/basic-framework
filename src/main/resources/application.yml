@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/system
+    username: postgres
+    password: 123456
+    initial-size: 100
+    max-idle: 60
+    max-wait: 10000
+    min-idle: 20
+    max-active: 500
+  jpa:
+    database: postgresql
+    generate-ddl: false
+    show-sql: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
